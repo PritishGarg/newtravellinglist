@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travelling List</title>
+    <style>
+        body {
+            background: url('https://thumbs.dreamstime.com/z/happy-asian-female-traveller-pointing-up-white-isolated-background-64610222.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .container {
+            position: relative;
+            margin: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        select, button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select:focus, button:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .logout-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logout-section button {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .logout-section button:hover {
+            background-color: #c0392b;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Travelling List</h2>
+        <select id="dropdown">
+            <option value="">Select a location</option>
+            <option value="mallikarjuna-temple.html">Mallikarjuna Temple</option>
+            <option value="omkareshwar.html">Omkareshwar Temple</option>
+            <option value="vivekananda-rock-memorial.html">Vivekananda Rock Memorial</option> <!-- Updated -->
+            <option value="dallake.html">Dal Lake</option>
+        </select>
+        <button onclick="openLink()">Go</button>
+        <div class="logout-section">
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+    
+    <script>
+        function openLink() {
+            const dropdown = document.getElementById('dropdown');
+            const selectedValue = dropdown.value;
+
+            if (selectedValue) {
+                // Navigate to the selected page
+                window.location.href = selectedValue;
+            } else {
+                alert('Please select a location from the dropdown!');
+            }
+        }
+
+        function logout() {
+            // Redirect to the logout page
+            window.location.href = "logout.html";
+        }
+    </script>
+</body>
+</html>
